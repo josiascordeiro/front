@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: flex-start;
+  
+}
+
+form{
+width: 500px;
+margin: 30px auto;
+align-items: center;  
+text-align: center;
+}
+
+form input {
+  margin-bottom: 5px;
+
+}
+
+form input[type='button'] {
+  margin-right: 10px;
+}
+
