@@ -1,12 +1,12 @@
 import React from "react";
 
 
-function Formulario (botao) {
+function Formulario (botao, eventoTeclado) {
  
             return (
                      <form action="">
-<input type="text" name="" placeholder="Nome" id="" className="form-control"/>
-<input type="text" name="" placeholder="Marca" id="" className="form-control"/>
+<input type="text" onChange={eventoTeclado}  name="nome" placeholder="Nome" id="" className="form-control"  />
+<input type="text" onChange={eventoTeclado}  name="marca" placeholder="Marca" id="" className="form-control" />
 
 {
             botao 

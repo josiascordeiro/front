@@ -28,7 +28,8 @@ function App() {
 
         //obtendo dados do formulário ao digitar
         const aoDigitar = (e) => {
-        console.log(e.target)  
+          setObjProduto({...objProduto, [e.target.name]:e.target.value});   
+             
         }
 
   return (
@@ -36,7 +37,7 @@ function App() {
       <p><h1>Teste</h1>
      
       {JSON.stringify(objProduto)}</p>
-      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar}/>
+      <Formulario eventoTeclado={aoDigitar} obj={objProduto}/>
       <Tabela vetor={produtos}/>             
     </>
   )
