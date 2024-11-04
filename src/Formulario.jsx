@@ -1,26 +1,41 @@
 import React from "react";
 
-
-function Formulario (botao, eventoTeclado) {
- 
-            return (
-                     <form action="">
-<input type="text" onChange={eventoTeclado}  name="nome" placeholder="Nome" id="" className="form-control"  />
-<input type="text" onChange={eventoTeclado}  name="marca" placeholder="Marca" id="" className="form-control" />
-
-{
-            botao 
-            ? 
-            <input type="button" className="btn btn-primary" value="CAdastrar" id="" /> 
-            :
-            <div>
-                   <input type="button" className="btn btn-warning" value="Alterar" id="" />
-                   <input type="button" className="btn btn-danger" value="Excluir" id="" />
-                   <input type="button" className="btn btn-secondary" value="Cancelar" id="" />
-            </div>
+// Desestruture as props corretamente
+function Formulario({ botao, eventoTeclado, obj, cadastrar }) {
+  return (
+    <form>
+      {/* Campo de entrada para o nome do produto */}
+      <input
+        type="text"
+        value={obj.nome || ''}
+        onChange={eventoTeclado}
+        name="nome"
+        placeholder="Nome"
+        className="form-control"
+      />
+      {/* Campo de entrada para a marca do produto */}
+      <input
+        type="text"
+        value={obj.marca || ''}
+        onChange={eventoTeclado}
+        name="marca"
+        placeholder="Marca"
+        className="form-control"
+      />
+      {/* Botão de cadastro ou botões de alterar/excluir/cancelar */}
+      {
+        botao 
+        ? 
+        <input type="button" value="Cadastrar" onClick={cadastrar} className="btn btn-primary" /> 
+        :
+        <div>
+          <input type="button" value="Alterar" className="btn btn-warning" />
+          <input type="button" value="Excluir" className="btn btn-danger" />
+          <input type="button" value="Cancelar" className="btn btn-secondary" />
+        </div>
+      }
+    </form>
+  );
 }
-                     </form>                        
-            )
 
-}
 export default Formulario;
